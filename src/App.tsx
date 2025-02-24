@@ -225,35 +225,39 @@ function Portfolio() {
             <div className="space-y-8">
               <ExperienceCard 
                 company="Alpina Digital"
-                position="Desenvolvedor de Suporte"
+                position="Desenvolvedor Fullstack"
                 period="09/2024 - Presente"
                 responsibilities={[
                   "Manutenção e correção de problemas em sistemas, e-commerces e aplicativos",
-                  "Atendimento a chamados de suporte técnico",
-                  "Otimização de desempenho de sites e plataformas",
-                  "Integração e configuração de ferramentas e APIs"
+                  "Atendimento a chamados de suporte, fornecendo assistência técnica e solucionando problemas de clientes",
+                  "Otimização de desempenho de sites e plataformas, ajustando códigos e bancos de dados",
+                  "Integração e configuração de ferramentas, incluindo APIs, gateways de pagamento e automação de marketing",
+                  "Documentação e treinamento de processos técnicos para clientes e equipe interna",
+                  "Monitoramento e prevenção de falhas em sistemas e implementação de medidas de segurança",
+                  "Colaboração com equipes multidisciplinares para garantir que as soluções atendam aos requisitos técnicos e de UX"
                 ]}
               />
               <ExperienceCard 
                 company="Nepuga"
-                position="Programador Fullstack"
+                position="Desenvolvedor Fullstack"
                 period="01/2023 - 09/2024"
                 responsibilities={[
-                  "Desenvolvimento e manutenção de aplicações web",
-                  "Implementação de novas funcionalidades",
-                  "Integração de APIs e otimização de processos",
-                  "Desenvolvimento de bots para Discord utilizando Python"
+                  "Desenvolvimento e manutenção de aplicações web, garantindo estabilidade e eficiência nos sistemas",
+                  "Implementação de novas funcionalidades e correção de bugs conforme as necessidades do negócio",
+                  "Integração de APIs e otimização de processos, colaborando com a equipe de desenvolvimento para melhor desempenho",
+                  "Desenvolvimento de bots para Discord utilizando Python, automatizando tarefas e interações",
+                  "Atuação com WordPress, PHP e Moodle, criando e aprimorando funcionalidades para plataformas educacionais"
                 ]}
               />
               <ExperienceCard 
                 company="SellersFlow"
-                position="Programador Fullstack"
+                position="Desenvolvedor Fullstack"
                 period="02/2022 - 01/2023"
                 responsibilities={[
-                  "Desenvolvimento de soluções personalizadas para e-commerce",
-                  "Manutenção e atualização de sistemas existentes",
-                  "Implementação de novas funcionalidades",
-                  "Desenvolvimento de lojas utilizando WooCommerce, Shopify e PrestaShop"
+                  "Desenvolvimento de soluções personalizadas para e-commerce, aprimorando funcionalidades e escalabilidade",
+                  "Manutenção e atualização de sistemas existentes, garantindo segurança e eficiência",
+                  "Implementação de novas funcionalidades e suporte técnico para a equipe, otimizando fluxos de trabalho",
+                  "Desenvolvimento de lojas utilizando WooCommerce, Shopify e PrestaShop, adaptando soluções para diferentes necessidades de mercado"
                 ]}
               />
             </div>
