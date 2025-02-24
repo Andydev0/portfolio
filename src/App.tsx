@@ -40,21 +40,47 @@ function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300"
-        aria-label="Toggle theme"
-      >
-        {theme === 'dark' ? (
-          <Sun className="w-5 h-5 text-yellow-500" />
-        ) : (
-          <Moon className="w-5 h-5 text-slate-700" />
-        )}
-      </button>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex-1 flex justify-center">
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="#sobre" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Sobre
+                </a>
+                <a href="#habilidades" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Habilidades
+                </a>
+                <a href="#projetos" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Projetos
+                </a>
+                <a href="#experiencia" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Experiência
+                </a>
+                <a href="#educacao" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Educação
+                </a>
+              </div>
+            </div>
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-slate-700" />
+              )}
+            </button>
+          </div>
+        </div>
+      </nav>
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden">
+      <header id="inicio" className="relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100/40 to-purple-100/40 dark:from-blue-600/20 dark:to-purple-600/20 backdrop-blur-3xl"></div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(56,189,248,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_50%,rgba(56,189,248,0.15),transparent_50%)]"></div>
@@ -98,7 +124,7 @@ function Portfolio() {
       </header>
 
       {/* About Section */}
-      <section className="py-24 relative">
+      <section id="sobre" className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <SectionTitle>Resumo Profissional</SectionTitle>
@@ -120,7 +146,7 @@ function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-24 relative">
+      <section id="habilidades" className="py-24 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
@@ -152,7 +178,7 @@ function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 relative">
+      <section id="projetos" className="py-24 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
@@ -192,7 +218,7 @@ function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-24">
+      <section id="experiencia" className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <SectionTitle>Experiência Profissional</SectionTitle>
@@ -236,7 +262,7 @@ function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section className="py-24 relative">
+      <section id="educacao" className="py-24 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
