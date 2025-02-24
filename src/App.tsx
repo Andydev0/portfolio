@@ -185,33 +185,33 @@ function Portfolio() {
             <SectionTitle>Projetos</SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               <ProjectCard
-                title="Portfolio Website"
-                description="Meu site de portfólio pessoal construído com React, TypeScript e Tailwind CSS. Design moderno e responsivo com modo escuro."
-                technologies={["React", "TypeScript", "Tailwind CSS", "Vite"]}
-                githubUrl="#"
-                liveUrl="#"
-              />
-              <ProjectCard
                 title="E-commerce Dashboard"
-                description="Sistema de gestão para e-commerce com painel administrativo completo. Inclui gestão de produtos, pedidos, clientes e relatórios de vendas. Integração com múltiplas plataformas de pagamento e APIs de logística."
-                technologies={["Laravel", "MySQL", "React", "TypeScript", "Redis", "Docker"]}
+                description="Sistema de gestão para e-commerce com painel administrativo completo. Inclui gestão de produtos, pedidos, clientes e relatórios de vendas."
+                technologies={["Laravel", "MySQL", "React", "TypeScript", "Redis"]}
                 githubUrl="#"
                 liveUrl="#"
               />
               <ProjectCard
                 title="Sistema de Gestão de Cursos"
-                description="Plataforma LMS (Learning Management System) para gerenciamento de cursos online. Suporta múltiplos tipos de conteúdo, sistema de avaliação, certificados automáticos e integração com Moodle."
-                technologies={["PHP", "CodeIgniter", "PostgreSQL", "jQuery", "Bootstrap", "AWS"]}
+                description="Plataforma LMS para gerenciamento de cursos online. Suporta múltiplos tipos de conteúdo, sistema de avaliação e certificados automáticos."
+                technologies={["PHP", "CodeIgniter", "PostgreSQL", "jQuery", "AWS"]}
                 githubUrl="#"
                 liveUrl="#"
               />
               <ProjectCard
                 title="Bot Discord Multifuncional"
-                description="Bot para Discord desenvolvido em Python com funcionalidades de moderação, música, jogos e integração com APIs externas. Inclui sistema de níveis, economia virtual e comandos personalizáveis."
-                technologies={["Python", "Discord.py", "MongoDB", "FFmpeg", "REST APIs"]}
+                description="Bot para Discord com funcionalidades de moderação, música, jogos e integração com APIs externas. Inclui sistema de níveis e economia virtual."
+                technologies={["Python", "Discord.py", "MongoDB", "REST APIs"]}
                 githubUrl="#"
                 liveUrl="#"
               />
+              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-dashed border-slate-200/20 dark:border-white/10 flex flex-col items-center justify-center text-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600/10 to-purple-600/10 dark:from-blue-500/20 dark:to-purple-500/20 flex items-center justify-center">
+                  <Code2 className="w-8 h-8 text-blue-600/70 dark:text-blue-400/70" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900/70 dark:text-white/70">Mais Projetos em Breve</h3>
+                <p className="text-sm text-slate-600/70 dark:text-slate-300/70">Novos projetos estão sendo desenvolvidos e serão adicionados em breve.</p>
+              </div>
             </div>
           </div>
         </div>
