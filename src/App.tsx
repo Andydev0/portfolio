@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, MapPin, Download, Code2, Database, Globe, ShoppingBag, Sun, Moon, GraduationCap, Award, ExternalLink } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
@@ -36,6 +36,39 @@ function App() {
 }
 
 function Portfolio() {
+  const [activeSection, setActiveSection] = useState('inicio');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-50% 0px -50% 0px', // Ativa quando a seção está no meio da tela
+        threshold: 0
+      }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  const navLinks = [
+    { href: '#inicio', label: 'Sobre' },
+    { href: '#habilidades', label: 'Habilidades' },
+    { href: '#projetos', label: 'Projetos' },
+    { href: '#experiencia', label: 'Experiência' },
+    { href: '#educacao', label: 'Educação' }
+  ];
+
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -46,24 +79,21 @@ function Portfolio() {
           <div className="flex items-center justify-between h-16">
             <div className="flex-1 flex justify-center">
               <div className="hidden md:flex items-center space-x-8">
-                <a href="#sobre" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Sobre
-                </a>
-                <a href="#habilidades" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Habilidades
-                </a>
-                <a href="#projetos" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Projetos
-                </a>
-                <a href="#experiencia" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Experiência
-                </a>
-                <a href="#educacao" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Educação
-                </a>
+                {navLinks.map(({ href, label }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    className={`text-base font-medium transition-colors duration-200 ${
+                      activeSection === href.slice(1)
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400'
+                    }`}
+                  >
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
-            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -80,7 +110,7 @@ function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <header id="inicio" className="relative overflow-hidden pt-16">
+      <section id="inicio" className="relative overflow-hidden pt-16">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100/40 to-purple-100/40 dark:from-blue-600/20 dark:to-purple-600/20 backdrop-blur-3xl"></div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(56,189,248,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_30%_50%,rgba(56,189,248,0.15),transparent_50%)]"></div>
@@ -121,7 +151,7 @@ function Portfolio() {
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       {/* About Section */}
       <section id="sobre" className="py-24 relative">
@@ -146,7 +176,7 @@ function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="habilidades" className="py-24 relative">
+      <section id="habilidades" className="py-20 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
@@ -178,7 +208,7 @@ function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projetos" className="py-24 relative">
+      <section id="projetos" className="py-20 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
@@ -218,7 +248,7 @@ function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experiencia" className="py-24">
+      <section id="experiencia" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <SectionTitle>Experiência Profissional</SectionTitle>
@@ -266,7 +296,7 @@ function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section id="educacao" className="py-24 relative">
+      <section id="educacao" className="py-20 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_50%)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
